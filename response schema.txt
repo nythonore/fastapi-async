@@ -1,0 +1,39 @@
+response schema
+
+
+Error / Exception
+
+{
+  status: "error",
+  message: "Exception"
+}
+
+Error / Field
+
+{
+  status: "fail",
+  data: {
+    "field": "fail message"
+  }
+}
+
+GET / View
+
+{
+  status: "success",
+  data: Example
+}
+
+GET / View
+
+{
+  status: "success",
+  data: [Example]
+}
+
+DELETE
+
+{
+  status: "success",
+  data: null
+}
