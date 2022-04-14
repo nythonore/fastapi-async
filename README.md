@@ -1,6 +1,6 @@
 # FastAPI Async (Tortoise | PyTest)
 
-#### Prerequisites
+### Prerequisites
 
 Make sure you have already installed [Python 3.8+](https://www.python.org), [Pip](https://pip.pypa.io/en/stable/installation) and [PostgreSQL](https://www.postgresql.org/).
 

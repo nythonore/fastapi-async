@@ -9,6 +9,7 @@ uvicorn = {extras = ["standard"], version = "*"}
 python-dotenv = "*"
 
 [dev-packages]
+yapf = "*"
 
 [requires]
 python_version = "3.8"

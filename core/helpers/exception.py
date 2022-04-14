@@ -1,13 +1,42 @@
-from fastapi import Request, status
+from fastapi import Request, status, exceptions
 from starlette.responses import JSONResponse
-from fastapi.exceptions import RequestValidationError, HTTPException
 
-def handle_request_validation_error(request: Request, exception: RequestValidationError):
+
+def handle_request_validation_error(
+    request: Request, exception: exceptions.RequestValidationError
+):
+  # pylint: disable=unused-argument
   error = exception.errors()[0]
-  return JSONResponse(content={'error': 'fail', 'data': {f'{error["loc"][1]}': error["msg"]}}, status_code=422)
+  return JSONResponse(
+      content={
+          'error': 'fail',
+          'data': {
+              f'{error["loc"][1]}': error['msg']
+          }
+      },
+      status_code=status.HTTP_422_UNPROCESSABLE_ENTITY
+  )
 
-def handle_http_exception(request: Request, exception: HTTPException):
-  return JSONResponse(content={'status': 'error', 'message': exception.detail}, status_code=exception.status_code)
+
+def handle_http_exception(
+    request: Request, exception: exceptions.HTTPException
+):
+  # pylint: disable=unused-argument
+  return JSONResponse(
+      content={
+          'status': 'error',
+          'message': exception.detail
+      },
+      status_code=exception.status_code
+  )
+
 
 def handle_exception(request: Request, exception: Exception):
-  return JSONResponse(content={'status': 'error', 'message': 'Internal Server Error'}, status_code=500)
+  # pylint: disable=unused-argument
+  return JSONResponse(
+      content={
+          'status': 'error',
+          'message': 'Internal Server Error'
+      },
+      status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+  )
