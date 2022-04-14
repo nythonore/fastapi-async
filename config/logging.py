@@ -36,7 +36,7 @@ DEFAULT_LOGGING = {
                 },
             'production_file':
                 {
-                    'level': 'INFO',
+                    'level': 'DEBUG',
                     'class': 'logging.handlers.RotatingFileHandler',
                     'filename': f'{settings.BASE_DIR}/logs/production.log',
                     'maxBytes': 1024 * 1024 * 10,
@@ -44,7 +44,7 @@ DEFAULT_LOGGING = {
                     'formatter': 'main_formatter',
                     'filters': ['require_debug_false'],
                 },
-            'debug_file':
+            '   ':
                 {
                     'level': 'DEBUG',
                     'class': 'logging.handlers.RotatingFileHandler',
@@ -67,4 +67,5 @@ DEFAULT_LOGGING = {
 
 
 def configure_logging():
-  logging.config.dictConfig(DEFAULT_LOGGING)
+    pass
+#   logging.config.dictConfig(DEFAULT_LOGGING)
