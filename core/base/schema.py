@@ -10,3 +10,6 @@ class BaseType(BaseModel):
 
 class ResultType(BaseModel):
   status: str = 'success'
+
+  class Config:
+    orm_mode = True

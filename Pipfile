@@ -7,6 +7,7 @@ name = "pypi"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 python-dotenv = "*"
+tortoise-orm = {extras = ["asyncpg"], version = "*"}
 
 [dev-packages]
 yapf = "*"

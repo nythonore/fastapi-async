@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from config.settings import settings
-from config.logging import configure_logging
-from config.middleware import configure_middleware
-from config.exception import configure_exception
-from config.routes import configure_routes
+from config.logging import register_logging
+from config.middleware import register_middleware
+from config.tortoise import register_tortoise
+from config.exception import register_exception
+from config.routes import register_routes
 from core.helpers.responses import responses
 
 
@@ -18,9 +19,10 @@ def create_app():
       responses=responses,
   )
 
-  configure_logging()
-  configure_middleware(app)
-  configure_exception(app)
-  configure_routes(app, root=settings.ROOT_PATH)
+  register_logging()
+  register_middleware(app)
+  register_tortoise(app)
+  register_exception(app)
+  register_routes(app, root=settings.ROOT_PATH)
 
   return app

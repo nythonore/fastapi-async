@@ -1,7 +1,6 @@
 from typing import List
 from pydantic import BaseModel
-from core.base.type import BaseType
-from core.base.type import ResultType
+from core.base.schema import BaseType, ResultType
 
 
 class ExampleBase(BaseModel):

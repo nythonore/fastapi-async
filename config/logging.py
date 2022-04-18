@@ -22,7 +22,7 @@ DEFAULT_LOGGING = {
                     'format':
                         '[%(levelname)s]:[%(name)s]: %(message)s '
                         '(%(asctime)s; %(filename)s:%(lineno)d)',
-                    'datefmt': '%Y-%m-%d %H:%M:%S',
+                    'datefmt': "%Y-%m-%d %H:%M:%S",
                 },
         },
     'handlers':
@@ -36,7 +36,7 @@ DEFAULT_LOGGING = {
                 },
             'production_file':
                 {
-                    'level': 'DEBUG',
+                    'level': 'INFO',
                     'class': 'logging.handlers.RotatingFileHandler',
                     'filename': f'{settings.BASE_DIR}/logs/production.log',
                     'maxBytes': 1024 * 1024 * 10,
@@ -44,7 +44,7 @@ DEFAULT_LOGGING = {
                     'formatter': 'main_formatter',
                     'filters': ['require_debug_false'],
                 },
-            '   ':
+            'debug_file':
                 {
                     'level': 'DEBUG',
                     'class': 'logging.handlers.RotatingFileHandler',
@@ -60,12 +60,14 @@ DEFAULT_LOGGING = {
             '':
                 {
                     'handlers': ['console', 'production_file', 'debug_file'],
-                    'level': 'DEBUG'
+                    'level': "DEBUG",
                 },
         }
 }
 
 
-def configure_logging():
-    pass
+def register_logging():
+  pass
+
+
 #   logging.config.dictConfig(DEFAULT_LOGGING)

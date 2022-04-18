@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, status
-from modules.example.type import ExampleListResult, ExampleSingleResult, ExamplePayload
+from app.example.schema import ExampleListResult, ExampleSingleResult, ExamplePayload
 
 route = APIRouter(tags=['Example'])
 
