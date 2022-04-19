@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e629bab481bc3e6e091c7edaf702a15eeea40d706cd4fbcabf86aa15273ed4c5"
+            "sha256": "e3623b72e979fca80d282c9476c5f92f1ec1b6eec950d3140b1fad0377d9e754"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "aerich": {
+            "hashes": [
+                "sha256:96ac087922048470687264125cb9dfeaade982219c78e6a9b91a0fb67eaa1cd1",
+                "sha256:d45f98214ed54b8ec9be949df264c5b0b9e8b79d8f8ba9e68714675bc81a5574"
+            ],
+            "index": "pypi",
+            "version": "==0.6.3"
+        },
         "aiosqlite": {
             "hashes": [
                 "sha256:6c49dc6d3405929b1d08eeccc72306d3677503cc5e5e43771efc1e00232e8231",
@@ -78,6 +86,13 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==8.1.2"
+        },
+        "dictdiffer": {
+            "hashes": [
+                "sha256:17bacf5fbfe613ccf1b6d512bd766e6b21fb798822a133aa86098b8ac9997578",
+                "sha256:442bfc693cfcadaf46674575d2eba1c53b42f5e404218ca2c2ff549f2df56595"
+            ],
+            "version": "==0.9.0"
         },
         "fastapi": {
             "hashes": [
@@ -267,6 +282,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==0.17.1"
+        },
+        "tomlkit": {
+            "hashes": [
+                "sha256:3c517894eadef53e9072d343d37e4427b8f0b6200a70b7c9a19b2ebd1f53b951",
+                "sha256:3eba517439dcb2f84cf39f4f85fd2c3398309823a3c75ac3e73003638daf7915"
+            ],
+            "markers": "python_version >= '3.6' and python_version < '4.0'",
+            "version": "==0.10.1"
         },
         "tortoise-orm": {
             "extras": [

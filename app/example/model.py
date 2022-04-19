@@ -1,3 +1,4 @@
+import uuid
 from tortoise import fields
 from core.base.model import Model
 

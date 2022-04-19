@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from config.settings import settings
-from config.logging import register_logging
 from config.middleware import register_middleware
 from config.tortoise import register_tortoise
 from config.exception import register_exception
@@ -19,7 +18,6 @@ def create_app():
       responses=responses,
   )
 
-  register_logging()
   register_middleware(app)
   register_tortoise(app)
   register_exception(app)

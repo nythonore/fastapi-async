@@ -1,9 +1,10 @@
+from uuid import UUID
 from datetime import datetime
 from pydantic import BaseModel
 
 
 class BaseType(BaseModel):
-  id: int
+  id: UUID
   created_at: datetime
   updated_at: datetime
 

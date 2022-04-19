@@ -8,6 +8,7 @@ fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 python-dotenv = "*"
 tortoise-orm = {extras = ["asyncpg"], version = "*"}
+aerich = "*"
 
 [dev-packages]
 yapf = "*"

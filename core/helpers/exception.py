@@ -7,11 +7,18 @@ def handle_request_validation_error(
 ):
   # pylint: disable=unused-argument
   error = exception.errors()[0]
+  errorKey = ''
+
+  if len(error['loc']) == 2:
+    errorKey = error['loc'][1]
+  if len(error['loc']) == 1 or type(error['loc'][1]) is int:
+    errorKey = 'body'
+
   return JSONResponse(
       content={
           'error': 'fail',
           'data': {
-              f'{error["loc"][1]}': error['msg']
+              f'{errorKey}': error['msg']
           }
       },
       status_code=status.HTTP_422_UNPROCESSABLE_ENTITY
